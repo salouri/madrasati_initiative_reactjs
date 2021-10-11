@@ -35,3 +35,13 @@ nav {
     rgba(132, 124, 252, 1) 80%
   );
 }
+nav ul {
+  font-size: var(--fontsize-nav);
+  text-align: center;
+  list-style-type: none;
+  text-decoration: none;
+  color: white !important;
+}
+nav ul li {
+  margin: 40px;
+}
