@@ -51,7 +51,6 @@ nav ul li {
 }
 
 .social {
-  position: absolute;
   margin-top: 20px;
   display: flex;
   bottom: 60px;
@@ -63,4 +62,21 @@ nav ul li {
 }
 .social i:hover {
   color: #ffffff;
+}
+
+.subtopic {
+  text-align: center;
+  font-family: arial, sans-serif;
+  margin: 10px 10px 30px 10px !important;
+}
+
+.register {
+  margin-top: 50px;
+}
+.submitSuccess {
+  visibility: visibile;
+  color: rgb(62, 133, 55);
+  font-weight: bold;
+  opacity: 1;
+  transition: visibility 0.5s, opacity 0.5s linear;
 }

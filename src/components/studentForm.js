@@ -6,12 +6,7 @@ export default class StudentForm extends Component {
   constructor(props) {
     super(props);
 
-    this.eventFirstName = this.eventFirstName.bind(this);
-    this.eventLastName = this.eventLastName.bind(this);
-    this.eventDOB = this.eventDOB.bind(this);
-    this.eventNationality = this.eventNationality.bind(this);
-    this.eventCurrentGPA = this.eventCurrentGPA.bind(this);
-    this.eventPreviousGPA = this.eventPreviousGPA.bind(this);
+    this.eventCurrentField = this.eventCurrentField.bind(this);
 
     this.onFormSubmit = this.onFormSubmit.bind(this);
 
@@ -26,28 +21,9 @@ export default class StudentForm extends Component {
   }
 
   // Event handlers
-  eventFirstName(event) {
-    this.setState({ firstName: event.target.value.trim() });
-  }
-
-  eventLastName(event) {
-    this.setState({ lastName: event.target.value.trim() });
-  }
-
-  eventDOB(event) {
-    this.setState({ dob: event.target.value });
-  }
-
-  eventNationality(event) {
-    this.setState({ nationality: event.target.value.trim() });
-  }
-
-  eventCurrentGPA(event) {
-    this.setState({ currentGPA: event.target.value });
-  }
-
-  eventPreviousGPA(event) {
-    this.setState({ previousGPA: event.target.value });
+  eventCurrentField(field, event) {
+    console.log('field:', field, 'value: ', event.target.value);
+    this.setState({ [field]: event.target.value });
   }
 
   onFormSubmit(event) {
@@ -58,7 +34,7 @@ export default class StudentForm extends Component {
     newStudent.id = students.length + 1;
     students.push(newStudent);
     localStorage.setItem('Students', JSON.stringify(students));
-    // reset form with "controlled" fields
+    // reset form since it has "controlled" fields
     this.setState({
       firstName: '',
       lastName: '',
@@ -67,6 +43,7 @@ export default class StudentForm extends Component {
       currentGPA: '',
       previousGPA: '',
     });
+
     this.divSuccess.insertAdjacentHTML(
       'beforeend',
       '<p class="submitSuccess">Student registered successfully!</p>'
@@ -92,8 +69,8 @@ export default class StudentForm extends Component {
                   type='text'
                   required={true}
                   className='form-control'
-                  value={this.state.firstName || 'first'}
-                  onChange={this.eventFirstName}
+                  value={this.state.firstName}
+                  onChange={this.eventCurrentField.bind(this, 'firstName')}
                 />
               </div>
               <div className='form-group mb-3'>
@@ -104,8 +81,8 @@ export default class StudentForm extends Component {
                   type='text'
                   required={true}
                   className='form-control'
-                  value={this.state.lastName || 'last'}
-                  onChange={this.eventLastName}
+                  value={this.state.lastName}
+                  onChange={this.eventCurrentField.bind(this, 'lastName')}
                 />
               </div>
               <div className='form-group mb-3'>
@@ -117,8 +94,8 @@ export default class StudentForm extends Component {
                   required={true}
                   max={new Date()}
                   className='form-control'
-                  value={this.state.dob || '1900-01-01'}
-                  onChange={this.eventDOB}
+                  value={this.state.dob}
+                  onChange={this.eventCurrentField.bind(this, 'dob')}
                 />
               </div>
               <div className='form-group mb-3'>
@@ -128,8 +105,8 @@ export default class StudentForm extends Component {
                 <input
                   type='text'
                   className='form-control'
-                  value={this.state.nationality || 'Jordan'}
-                  onChange={this.eventNationality}
+                  value={this.state.nationality}
+                  onChange={this.eventCurrentField.bind(this, 'nationality')}
                 />
               </div>
               <div className='form-group mb-3'>
@@ -142,8 +119,8 @@ export default class StudentForm extends Component {
                   min='0'
                   max='4'
                   className='form-control'
-                  value={this.state.previousGPA || 2}
-                  onChange={this.eventPreviousGPA}
+                  value={this.state.previousGPA}
+                  onChange={this.eventCurrentField.bind(this, 'previousGPA')}
                 />
               </div>
               <div className='form-group mb-3'>
@@ -156,8 +133,8 @@ export default class StudentForm extends Component {
                   min='0'
                   max='4'
                   className='form-control'
-                  value={this.state.currentGPA || 3.4}
-                  onChange={this.eventCurrentGPA}
+                  value={this.state.currentGPA}
+                  onChange={this.eventCurrentField.bind(this, 'currentGPA')}
                 />
               </div>
               <div className='d-grid mt-3'>
