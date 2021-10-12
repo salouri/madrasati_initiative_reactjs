@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import ReactTypingEffect from 'react-typing-effect';
+
 import madrasatipic from '../img/madrasati_logo.png';
 import Social from '../components/social';
+import StudentForm from '../components/studentForm';
 
 class Register extends Component {
   render() {
@@ -20,6 +22,8 @@ class Register extends Component {
             return i === 0 ? <h1>{text}</h1> : text;
           }}
         />
+
+        <StudentForm />
 
         <Social />
       </div>
