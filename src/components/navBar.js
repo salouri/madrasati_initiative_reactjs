@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import Navitem from './navitem';
+import Navitem from './navItem';
 
 class Navbar extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      activeNavItem: '',
+      activeNavItem: 'Register',
     };
   }
 
   activateItem = (id) => {
     // remove 'active' class from all "Navitem" DOM elements
-    if (this.state.navItemId.length > 0) {
+    if (this.state.activeNavItem.length > 0) {
       document
         .querySelector(`#${this.state.activeNavItem}`)
         .classList.remove('active');
