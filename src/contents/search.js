@@ -5,7 +5,10 @@ import StudentsTable from '../components/studentsTable';
 class Search extends Component {
   constructor(props) {
     super(props);
+    this.eventCurrentField = this.eventCurrentField.bind(this);
+
     this.state = {
+      fullName: { first: '', last: '' },
       students: JSON.parse(localStorage.getItem('Students')) || [],
       foundStudents: [],
     };
@@ -14,12 +17,22 @@ class Search extends Component {
   onFormSubmit(event) {
     event.preventDefault();
     const students = JSON.parse(localStorage.getItem('Students')) || [];
-    const fullName = {};
-    const foundStudents = this.state.students.filter(
+    const fullName = { ...this.state.fullName };
+    const foundStudents = students.filter(
       (student) =>
-        student.firstName === fullName.first && student.lastName === fullName.last
+        student.firstName.toLowerCase().trim() ===
+          fullName.first.toLowerCase().trim() &&
+        student.lastName.toLowerCase().trim() === fullName.last.toLowerCase().trim()
     );
-    this.setState({ foundStudents });
+    console.log('foundStudents', foundStudents);
+    this.setState({ foundStudents: foundStudents || [] });
+  }
+
+  // Event handlers
+  eventCurrentField(field, event) {
+    const tempFull = { ...this.state.fullName };
+    tempFull[field] = event.target.value;
+    this.setState({ fullName: tempFull });
   }
 
   render() {
@@ -29,7 +42,7 @@ class Search extends Component {
         <h2>{'Search for a student:'}</h2>
         <div className='card'>
           <div className='card-body'>
-            <form onSubmit={this.onFormSubmit} id='search-student-form'>
+            <form onSubmit={this.onFormSubmit.bind(this)} id='search-student-form'>
               <div className='form-group mb-3 leftHlaf'>
                 <label htmlFor='firstName'>
                   <strong>First Name</strong>
@@ -40,7 +53,8 @@ class Search extends Component {
                     type='text'
                     required={true}
                     className='form-control'
-                    value={this.state.firstName}
+                    value={this.state.fullName.first}
+                    onChange={this.eventCurrentField.bind(this, 'first')}
                   />
                 </span>
               </div>
@@ -53,7 +67,8 @@ class Search extends Component {
                   type='text'
                   required={true}
                   className='form-control'
-                  value={this.state.lastName}
+                  value={this.state.fullName.last}
+                  onChange={this.eventCurrentField.bind(this, 'last')}
                 />
               </div>
 
