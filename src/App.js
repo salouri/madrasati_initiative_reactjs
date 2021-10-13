@@ -9,6 +9,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 function App() {
+  window.onload = window.localStorage.clear();
   return (
     <Router>
       <div className='App'>
