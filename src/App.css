@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,700&display=swap');
 :root {
-  --sidebar-flex: 1.5;
+  /* --sidebar-flex: 1.5; */
+  --sidebar-flex: 1;
   --condiv-flex: 6;
   --fontsize-p: 1.2rem;
   --fontsize-nav: 1.6rem;
@@ -28,12 +29,12 @@ body {
 nav {
   padding: 60px 30px 0px 30px;
   flex: var(--sidebar-flex);
-  background: rgb(238, 103, 143);
-  background: linear-gradient(
+  background: #e1970a;
+  /* background: linear-gradient(
     180deg,
     rgba(238, 103, 143, 1) 50%,
     rgba(132, 124, 252, 1) 80%
-  );
+  ); */
 }
 nav ul {
   font-size: var(--fontsize-nav);
@@ -46,8 +47,8 @@ nav ul li {
   margin: 40px;
 }
 
-.active {
-  font-weight: bolder;
+nav li > .active {
+  font-weight: bold;
 }
 
 .social {
@@ -70,9 +71,10 @@ nav ul li {
   margin: 10px 10px 30px 10px !important;
 }
 
-.register {
-  margin-top: 50px;
-}
+/* .register {
+  margin-bottom: 50px;
+  padding-bottom: 30px;
+} */
 .submitSuccess {
   visibility: visibile;
   color: rgb(62, 133, 55);
@@ -81,7 +83,7 @@ nav ul li {
   transition: visibility 0.5s, opacity 0.5s linear;
 }
 
-#students {
+.studentsTable {
   text-align: center;
   font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -89,21 +91,21 @@ nav ul li {
   width: 100%;
 }
 
-#students td,
-#students th {
+.studentsTable td,
+.studentsTable th {
   border: 1px solid #ddd;
   padding: 8px;
 }
 
-#students tr:nth-child(even) {
+.studentsTable tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-#students tr:hover {
+.studentsTable tr:hover {
   background-color: #ddd;
 }
 
-#students th {
+.studentsTable th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navitem from './navItem';
+import { NavLink } from 'react-router-dom';
 
 class Navbar extends Component {
   constructor(props) {
@@ -28,23 +28,21 @@ class Navbar extends Component {
     return (
       <nav>
         <ul>
-          <Navitem
-            item='Register'
-            tolink='/'
-            activeFunc={this.activateItem}
-          ></Navitem>
-
-          <Navitem
-            item='Search'
-            tolink='/search'
-            activeFunc={this.activateItem}
-          ></Navitem>
-
-          <Navitem
-            item='List'
-            tolink='/list'
-            activeFunc={this.activateItem}
-          ></Navitem>
+          <li id='Register'>
+            <NavLink to='/' exact activeClassName='active'>
+              Register
+            </NavLink>
+          </li>
+          <li id='Search'>
+            <NavLink to='/search' activeClassName='active'>
+              Search
+            </NavLink>
+          </li>
+          <li id='List'>
+            <NavLink to='/list' activeClassName='active'>
+              List
+            </NavLink>
+          </li>
         </ul>
       </nav>
     );
