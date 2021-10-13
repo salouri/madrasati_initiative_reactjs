@@ -3,10 +3,6 @@ import React, { Component } from 'react';
 export default class StudentsTable extends Component {
   DATA;
 
-  constructor(props) {
-    super(props);
-  }
-
   renderTableData() {
     if (this.props.students.length === 0)
       return (
@@ -17,7 +13,7 @@ export default class StudentsTable extends Component {
         </tr>
       );
 
-    return this.props.students.map((student, index) => {
+    return this.props.students.map((student) => {
       const { id, firstName, lastName, dob, nationality, previousGPA, currentGPA } =
         student; //destructuring
       return (

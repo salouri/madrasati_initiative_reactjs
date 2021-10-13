@@ -5,9 +5,7 @@ export default class StudentForm extends Component {
 
   constructor(props) {
     super(props);
-
     this.eventCurrentField = this.eventCurrentField.bind(this);
-
     this.onFormSubmit = this.onFormSubmit.bind(this);
 
     this.state = {
@@ -59,7 +57,7 @@ export default class StudentForm extends Component {
         <h2>{'Register a new student:'}</h2>
         <div className='card'>
           <div className='card-body'>
-            <form onSubmit={this.onFormSubmit} id='register-student-form'>
+            <form onSubmit={this.onFormSubmit.bind(this)} id='register-student-form'>
               <div className='form-group mb-3'>
                 <label>
                   <strong>First Name</strong>
