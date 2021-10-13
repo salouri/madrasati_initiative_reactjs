@@ -22,7 +22,6 @@ export default class StudentForm extends Component {
 
   // Event handlers
   eventCurrentField(field, event) {
-    console.log('field:', field, 'value: ', event.target.value);
     this.setState({ [field]: event.target.value });
   }
 
