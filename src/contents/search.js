@@ -80,7 +80,6 @@ class Search extends Component {
             </form>
           </div>
         </div>
-        <br />
         <StudentsTable
           students={this.state.foundStudents}
           title='Found Students (if any):'

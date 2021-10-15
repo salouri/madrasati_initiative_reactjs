@@ -13,6 +13,7 @@
 }
 body {
   font-family: 'Raleway';
+  background-color: #f4f5f9;
 }
 .App {
   position: relative;
@@ -77,7 +78,7 @@ nav li > .active {
 }
 
 .social {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
   text-align: left;
@@ -109,6 +110,9 @@ nav li > .active {
   transition: visibility 0.5s, opacity 0.5s linear;
 }
 
+.studentsTableContainer {
+  padding-top: 70px;
+}
 .studentsTable {
   text-align: center;
   font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;

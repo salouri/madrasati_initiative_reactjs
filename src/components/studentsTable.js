@@ -31,7 +31,7 @@ class StudentsTable extends Component {
 
   render() {
     return (
-      <div className='condiv'>
+      <div className='studentsTableContainer'>
         <h2 className='subtopic'>{this.props.title}</h2>
         <table className='studentsTable'>
           <tbody>
