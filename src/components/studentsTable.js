@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class StudentsTable extends Component {
+class StudentsTable extends Component {
   DATA;
 
   renderTableData() {
@@ -32,7 +32,7 @@ export default class StudentsTable extends Component {
   render() {
     return (
       <div className='condiv'>
-        <h1 className='subtopic'>{this.props.title}</h1>
+        <h2 className='subtopic'>{this.props.title}</h2>
         <table className='studentsTable'>
           <tbody>
             <tr>
@@ -50,3 +50,5 @@ export default class StudentsTable extends Component {
     );
   }
 }
+
+export default StudentsTable;

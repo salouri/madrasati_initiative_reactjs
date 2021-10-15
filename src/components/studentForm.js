@@ -52,95 +52,91 @@ export default class StudentForm extends Component {
 
   render() {
     return (
-      <div className='container'>
-        <br />
-        <h2>{'Register a new student:'}</h2>
-        <div className='card'>
-          <div className='card-body'>
-            <form onSubmit={this.onFormSubmit.bind(this)} id='register-student-form'>
-              <div className='form-group mb-3'>
-                <label>
-                  <strong>First Name</strong>
-                </label>
-                <input
-                  type='text'
-                  required={true}
-                  className='form-control'
-                  value={this.state.firstName}
-                  onChange={this.eventCurrentField.bind(this, 'firstName')}
-                />
-              </div>
-              <div className='form-group mb-3'>
-                <label>
-                  <strong>Last Name</strong>
-                </label>
-                <input
-                  type='text'
-                  required={true}
-                  className='form-control'
-                  value={this.state.lastName}
-                  onChange={this.eventCurrentField.bind(this, 'lastName')}
-                />
-              </div>
-              <div className='form-group mb-3'>
-                <label>
-                  <strong>Date of Birth</strong>
-                </label>
-                <input
-                  type='date'
-                  required={true}
-                  max={new Date()}
-                  className='form-control'
-                  value={this.state.dob}
-                  onChange={this.eventCurrentField.bind(this, 'dob')}
-                />
-              </div>
-              <div className='form-group mb-3'>
-                <label>
-                  <strong>Nationality</strong>
-                </label>
-                <input
-                  type='text'
-                  className='form-control'
-                  value={this.state.nationality}
-                  onChange={this.eventCurrentField.bind(this, 'nationality')}
-                />
-              </div>
-              <div className='form-group mb-3'>
-                <label>
-                  <strong>Previous GPA</strong>
-                </label>
-                <input
-                  type='number'
-                  step='.01'
-                  min='0'
-                  max='4'
-                  className='form-control'
-                  value={this.state.previousGPA}
-                  onChange={this.eventCurrentField.bind(this, 'previousGPA')}
-                />
-              </div>
-              <div className='form-group mb-3'>
-                <label>
-                  <strong>Current GPA</strong>
-                </label>
-                <input
-                  type='number'
-                  step='.01'
-                  min='0'
-                  max='4'
-                  className='form-control'
-                  value={this.state.currentGPA}
-                  onChange={this.eventCurrentField.bind(this, 'currentGPA')}
-                />
-              </div>
-              <div className='d-grid mt-3'>
-                <button type='submit' className='btn btn-primary btn-block'>
-                  Submit
-                </button>
-              </div>
-            </form>
-          </div>
+      <div className='card'>
+        <div className='card-body'>
+          <form onSubmit={this.onFormSubmit.bind(this)} id='register-student-form'>
+            <div className='form-group mb-3'>
+              <label>
+                <strong>First Name</strong>
+              </label>
+              <input
+                type='text'
+                required={true}
+                className='form-control'
+                value={this.state.firstName}
+                onChange={this.eventCurrentField.bind(this, 'firstName')}
+              />
+            </div>
+            <div className='form-group mb-3'>
+              <label>
+                <strong>Last Name</strong>
+              </label>
+              <input
+                type='text'
+                required={true}
+                className='form-control'
+                value={this.state.lastName}
+                onChange={this.eventCurrentField.bind(this, 'lastName')}
+              />
+            </div>
+            <div className='form-group mb-3'>
+              <label>
+                <strong>Date of Birth</strong>
+              </label>
+              <input
+                type='date'
+                required={true}
+                max={new Date()}
+                className='form-control'
+                value={this.state.dob}
+                onChange={this.eventCurrentField.bind(this, 'dob')}
+              />
+            </div>
+            <div className='form-group mb-3'>
+              <label>
+                <strong>Nationality</strong>
+              </label>
+              <input
+                type='text'
+                className='form-control'
+                value={this.state.nationality}
+                onChange={this.eventCurrentField.bind(this, 'nationality')}
+              />
+            </div>
+            <div className='form-group mb-3'>
+              <label>
+                <strong>Previous GPA</strong>
+              </label>
+              <input
+                type='number'
+                step='.01'
+                min='0'
+                max='4'
+                className='form-control'
+                value={this.state.previousGPA}
+                onChange={this.eventCurrentField.bind(this, 'previousGPA')}
+              />
+            </div>
+            <div className='form-group mb-3'>
+              <label>
+                <strong>Current GPA</strong>
+              </label>
+              <input
+                type='number'
+                step='.01'
+                min='0'
+                max='4'
+                className='form-control'
+                value={this.state.currentGPA}
+                onChange={this.eventCurrentField.bind(this, 'currentGPA')}
+              />
+            </div>
+            <div className='d-grid mt-3'>
+              <button type='submit' className='btn btn-primary btn-block'>
+                Submit
+              </button>
+            </div>
+          </form>
         </div>
         <br />
         <div
@@ -148,7 +144,6 @@ export default class StudentForm extends Component {
             this.divSuccess = divElem;
           }}
         ></div>
-        <br />
       </div>
     );
   }

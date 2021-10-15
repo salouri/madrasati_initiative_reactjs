@@ -81,8 +81,11 @@ class Search extends Component {
           </div>
         </div>
         <br />
-        <StudentsTable students={this.state.foundStudents} title='Found Students:' />
-        <br />
+        <StudentsTable
+          students={this.state.foundStudents}
+          title='Found Students (if any):'
+        />
+        <br /> <br />
         <Social />
       </div>
     );

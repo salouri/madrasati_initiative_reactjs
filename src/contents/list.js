@@ -14,8 +14,11 @@ class List extends Component {
   render() {
     return (
       <div className='condiv'>
-        <StudentsTable students={this.state.students} title='List All Students' />
-        <br />
+        <StudentsTable
+          students={this.state.students}
+          title='List all registered students:'
+        />
+        <br /> <br />
         <Social />
       </div>
     );
