@@ -27,23 +27,25 @@ class Navbar extends Component {
   render() {
     return (
       <nav>
-        <ul>
-          <li id='Register'>
-            <NavLink to='/' exact activeClassName='active'>
-              Register
-            </NavLink>
-          </li>
-          <li id='Search'>
-            <NavLink to='/search' activeClassName='active'>
-              Search
-            </NavLink>
-          </li>
-          <li id='List'>
-            <NavLink to='/list' activeClassName='active'>
-              List
-            </NavLink>
-          </li>
-        </ul>
+        <div className='table'>
+          <ul id='horizontal-list'>
+            <li id='Register'>
+              <NavLink to='/' exact activeClassName='active'>
+                Register
+              </NavLink>
+            </li>
+            <li id='Search'>
+              <NavLink to='/search' activeClassName='active'>
+                Search
+              </NavLink>
+            </li>
+            <li id='List'>
+              <NavLink to='/list' activeClassName='active'>
+                List
+              </NavLink>
+            </li>
+          </ul>
+        </div>
       </nav>
     );
   }
