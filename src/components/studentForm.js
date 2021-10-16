@@ -253,129 +253,124 @@ export default class StudentForm extends Component {
 
   render() {
     return (
-      <Container>
-        <Card style={{ width: '45%', display: 'inline-block' }}>
-          <Card.Body>
-            <Container>
-              <Form
-                onSubmit={this.onFormSubmit.bind(this)}
-                id='register-student-form'
-              >
-                <Row>
-                  <Col>
-                    <Form.Group className='mb-3' controlId='formFname'>
-                      <Form.Label>
-                        <strong>First Name</strong>
-                      </Form.Label>
-                      <Form.Control
-                        placeholder='First Name'
-                        type='text'
-                        required={true}
-                        value={this.state.student.firstName}
-                        onChange={this.eventCurrentField.bind(this, 'firstName')}
-                      />
-                    </Form.Group>
-                  </Col>
-                  <Col>
-                    <Form.Group className='mb-3' controlId='formLname'>
-                      <Form.Label>
-                        <strong>Last Name</strong>
-                      </Form.Label>
-                      <Form.Control
-                        type='text'
-                        required={true}
-                        value={this.state.student.lastName}
-                        onChange={this.eventCurrentField.bind(this, 'lastName')}
-                      />
-                    </Form.Group>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                    <Form.Group className='mb-3' controlId='formDOB'>
-                      <Form.Label>
-                        <strong>Date of Birth</strong>
-                      </Form.Label>
-                      <Form.Control
-                        type='date'
-                        required={true}
-                        max={new Date()}
-                        value={this.state.student.dob}
-                        onChange={this.eventCurrentField.bind(this, 'dob')}
-                      />
-                    </Form.Group>
-                  </Col>
-                  <Col>
-                    <Form.Group className='mb-3' controlId='formNation'>
-                      <Form.Label>
-                        <strong>Nationality</strong>
-                      </Form.Label>
-                      <Form.Control
-                        as='select'
-                        name='nationality'
-                        required={true}
-                        value={this.state.student.nationality}
-                        onChange={this.eventCurrentField.bind(this, 'nationality')}
-                      >
-                        <option value='' selected disabled hidden>
-                          select from list
+      <Card style={{ width: '45%', display: 'inline-block' }}>
+        <Card.Body>
+          <Container>
+            <Form onSubmit={this.onFormSubmit.bind(this)} id='register-student-form'>
+              <Row>
+                <Col>
+                  <Form.Group className='mb-3' controlId='formFname'>
+                    <Form.Label>
+                      <strong>First Name</strong>
+                    </Form.Label>
+                    <Form.Control
+                      placeholder='First Name'
+                      type='text'
+                      required={true}
+                      value={this.state.student.firstName}
+                      onChange={this.eventCurrentField.bind(this, 'firstName')}
+                    />
+                  </Form.Group>
+                </Col>
+                <Col>
+                  <Form.Group className='mb-3' controlId='formLname'>
+                    <Form.Label>
+                      <strong>Last Name</strong>
+                    </Form.Label>
+                    <Form.Control
+                      type='text'
+                      required={true}
+                      value={this.state.student.lastName}
+                      onChange={this.eventCurrentField.bind(this, 'lastName')}
+                    />
+                  </Form.Group>
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <Form.Group className='mb-3' controlId='formDOB'>
+                    <Form.Label>
+                      <strong>Date of Birth</strong>
+                    </Form.Label>
+                    <Form.Control
+                      type='date'
+                      required={true}
+                      max={new Date()}
+                      value={this.state.student.dob}
+                      onChange={this.eventCurrentField.bind(this, 'dob')}
+                    />
+                  </Form.Group>
+                </Col>
+                <Col>
+                  <Form.Group className='mb-3' controlId='formNation'>
+                    <Form.Label>
+                      <strong>Nationality</strong>
+                    </Form.Label>
+                    <Form.Control
+                      as='select'
+                      name='nationality'
+                      required={true}
+                      value={this.state.student.nationality}
+                      onChange={this.eventCurrentField.bind(this, 'nationality')}
+                    >
+                      <option value='' selected disabled hidden>
+                        select from list
+                      </option>
+                      {this.state.nationalities.map((nation, index) => (
+                        <option key={index} value={nation.toLowerCase()}>
+                          {nation}
                         </option>
-                        {this.state.nationalities.map((nation, index) => (
-                          <option key={index} value={nation.toLowerCase()}>
-                            {nation}
-                          </option>
-                        ))}
-                      </Form.Control>
-                    </Form.Group>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                    <Form.Group className='mb-3' controlId='formPrevgpa'>
-                      <Form.Label>
-                        <strong>Previous GPA</strong>
-                      </Form.Label>
-                      <Form.Control
-                        type='number'
-                        step='.01'
-                        min='0'
-                        max='4'
-                        value={this.state.student.previousGPA}
-                        onChange={this.eventCurrentField.bind(this, 'previousGPA')}
-                      />
-                    </Form.Group>
-                  </Col>
-                  <Col>
-                    <Form.Group className='mb-3' controlId='formCurrgpa'>
-                      <Form.Label>
-                        <strong>Current GPA</strong>
-                      </Form.Label>
-                      <Form.Control
-                        type='number'
-                        step='.01'
-                        min='0'
-                        max='4'
-                        value={this.state.student.currentGPA}
-                        onChange={this.eventCurrentField.bind(this, 'currentGPA')}
-                      />
-                    </Form.Group>
-                  </Col>
-                </Row>
+                      ))}
+                    </Form.Control>
+                  </Form.Group>
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <Form.Group className='mb-3' controlId='formPrevgpa'>
+                    <Form.Label>
+                      <strong>Previous GPA</strong>
+                    </Form.Label>
+                    <Form.Control
+                      type='number'
+                      step='.01'
+                      min='0'
+                      max='4'
+                      value={this.state.student.previousGPA}
+                      onChange={this.eventCurrentField.bind(this, 'previousGPA')}
+                    />
+                  </Form.Group>
+                </Col>
+                <Col>
+                  <Form.Group className='mb-3' controlId='formCurrgpa'>
+                    <Form.Label>
+                      <strong>Current GPA</strong>
+                    </Form.Label>
+                    <Form.Control
+                      type='number'
+                      step='.01'
+                      min='0'
+                      max='4'
+                      value={this.state.student.currentGPA}
+                      onChange={this.eventCurrentField.bind(this, 'currentGPA')}
+                    />
+                  </Form.Group>
+                </Col>
+              </Row>
 
-                <Button type='submit' className='btn btn-primary btn-block'>
-                  Submit
-                </Button>
-              </Form>
-            </Container>
-            <br />
-            <div
-              ref={(divElem) => {
-                this.divSuccess = divElem;
-              }}
-            ></div>
-          </Card.Body>
-        </Card>
-      </Container>
+              <Button type='submit' className='btn btn-primary btn-block'>
+                Submit
+              </Button>
+            </Form>
+          </Container>
+          <br />
+          <div
+            ref={(divElem) => {
+              this.divSuccess = divElem;
+            }}
+          ></div>
+        </Card.Body>
+      </Card>
     );
   }
 }

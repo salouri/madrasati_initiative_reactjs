@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, Container, Table } from 'react-bootstrap';
 
 class StudentsTable extends Component {
   DATA;
@@ -32,24 +32,26 @@ class StudentsTable extends Component {
 
   render() {
     return (
-      <Card className='studentsTableContainer'>
-        <Card.Body>
-          <h2 className='subtopic'>{this.props.title}</h2>
-          <table className='studentsTable'>
-            <tbody>
-              <tr>
-                <th>{'First Name'}</th>
-                <th>{'Last Name'}</th>
-                <th>{'Date of Birth'}</th>
-                <th>{'Nationality'}</th>
-                <th>{'Last Year GPA'}</th>
-                <th>{'Current Year GPA'}</th>
-              </tr>
-              {this.renderTableData()}
-            </tbody>
-          </table>
-        </Card.Body>
-      </Card>
+      <Container>
+        <Card className='studentsTableContainer'>
+          <Card.Body>
+            <h2 className='subtopic'>{this.props.title}</h2>
+            <Table stripped bordered hover size='sm' className='studentsTable'>
+              <thead>
+                <tr>
+                  <th>{'First Name'}</th>
+                  <th>{'Last Name'}</th>
+                  <th>{'Date of Birth'}</th>
+                  <th>{'Nationality'}</th>
+                  <th>{'Last Year GPA'}</th>
+                  <th>{'Current Year GPA'}</th>
+                </tr>
+                {this.renderTableData()}
+              </thead>
+            </Table>
+          </Card.Body>
+        </Card>
+      </Container>
     );
   }
 }

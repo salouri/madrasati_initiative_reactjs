@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Social from '../components/social';
 import StudentsTable from '../components/studentsTable';
-import { Button, Form, Card } from 'react-bootstrap';
+import { Button, Form, Card, Container } from 'react-bootstrap';
 
 class Search extends Component {
   constructor(props) {
@@ -38,48 +38,51 @@ class Search extends Component {
 
   render() {
     return (
-      <div className='condiv'>
-        <h2>{'Search for a student:'}</h2>
-        <Card style={{ width: '65%', display: 'inline-block' }}>
-          <Card.Body style={{ width: '65%', display: 'inline-block' }}>
-            <Form onSubmit={this.onFormSubmit.bind(this)} id='search-student-form'>
-              <Form.Group className='mb-3'>
-                <Form.Label htmlFor='firstName'>
-                  <strong>First Name</strong>
-                </Form.Label>
-                <Form.Control
-                  id='firstName'
-                  type='text'
-                  required={true}
-                  value={this.state.fullName.first}
-                  onChange={this.eventCurrentField.bind(this, 'first')}
-                />
-              </Form.Group>
-              <Form.Group className='mb-3'>
-                <Form.Label htmlFor='lastName'>
-                  <strong>Last Name</strong>
-                </Form.Label>
-                <Form.Control
-                  id='lastName'
-                  type='text'
-                  required={true}
-                  value={this.state.fullName.last}
-                  onChange={this.eventCurrentField.bind(this, 'last')}
-                />
-              </Form.Group>
-              <Button type='submit' className='btn btn-primary btn-block'>
-                Search
-              </Button>
-            </Form>
-          </Card.Body>
-        </Card>
-        <StudentsTable
-          students={this.state.foundStudents}
-          title='Found Students (if any):'
-        />
-        <br /> <br />
-        <Social />
-      </div>
+      <Container>
+        <div className='condiv'>
+          <h2>{'Search for a student:'}</h2>
+          <Card style={{ width: '65%', display: 'inline-block' }}>
+            <Card.Body style={{ width: '55%', display: 'inline-block' }}>
+              <Form onSubmit={this.onFormSubmit.bind(this)} id='search-student-form'>
+                <Form.Group className='mb-3'>
+                  <Form.Label htmlFor='firstName'>
+                    <strong>First Name</strong>
+                  </Form.Label>
+                  <Form.Control
+                    id='firstName'
+                    type='text'
+                    required={true}
+                    value={this.state.fullName.first}
+                    onChange={this.eventCurrentField.bind(this, 'first')}
+                  />
+                </Form.Group>
+                <Form.Group className='mb-3'>
+                  <Form.Label htmlFor='lastName'>
+                    <strong>Last Name</strong>
+                  </Form.Label>
+                  <Form.Control
+                    id='lastName'
+                    type='text'
+                    required={true}
+                    value={this.state.fullName.last}
+                    onChange={this.eventCurrentField.bind(this, 'last')}
+                  />
+                </Form.Group>
+
+                <Button type='submit' className='btn btn-primary btn-block mb-5'>
+                  Search
+                </Button>
+              </Form>
+            </Card.Body>
+          </Card>
+          <StudentsTable
+            students={this.state.foundStudents}
+            title='Found Students (if any):'
+          />
+          <br /> <br />
+          <Social />
+        </div>
+      </Container>
     );
   }
 }
