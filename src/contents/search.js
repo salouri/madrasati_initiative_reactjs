@@ -47,13 +47,12 @@ class Search extends Component {
               <Form onSubmit={this.onFormSubmit.bind(this)} id='search-student-form'>
                 <Row>
                   <Col>
-                    <Form.Group className='mb-3' controlId='formSearchFirst'>
-                      <Form.Label htmlFor='searchByFirst'>
+                    <Form.Group className='mb-3' controlId='searchByFirst'>
+                      <Form.Label>
                         <strong>First Name</strong>
                       </Form.Label>
 
                       <Form.Control
-                        id='searchByFirst'
                         type='text'
                         required={true}
                         value={this.state.fullName.first}
@@ -62,13 +61,12 @@ class Search extends Component {
                     </Form.Group>
                   </Col>
                   <Col>
-                    <Form.Group className='mb-3' controlId='formSearchLast'>
-                      <Form.Label htmlFor='searchByLast'>
+                    <Form.Group className='mb-3' controlId='searchByLast'>
+                      <Form.Label>
                         <strong>Last Name</strong>
                       </Form.Label>
 
                       <Form.Control
-                        id='searchByLast'
                         type='text'
                         required={true}
                         value={this.state.fullName.last}
