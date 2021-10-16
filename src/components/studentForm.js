@@ -306,15 +306,16 @@ export default class StudentForm extends Component {
                     <Form.Label>
                       <strong>Nationality</strong>
                     </Form.Label>
-                    <select
+                    <Form.Control
+                      as='select'
                       name='nationality'
                       required={true}
                       // value={this.state.student.nationality}
                       onChange={this.eventCurrentField.bind(this, 'nationality')}
                       defaultValue={'jordanian'}
                     >
-                      <option value='' disabled hidden>
-                        select from list
+                      <option value='' disabled>
+                        Select from the list:
                       </option>
                       {this.state.nationalities.map((nation, index) => {
                         return (
@@ -323,7 +324,7 @@ export default class StudentForm extends Component {
                           </option>
                         );
                       })}
-                    </select>
+                    </Form.Control>
                   </Form.Group>
                 </Col>
               </Row>

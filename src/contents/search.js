@@ -79,9 +79,10 @@ class Search extends Component {
             students={this.state.foundStudents}
             title='Found Students (if any):'
           />
-          <br /> <br />
-          <Social />
         </Container>
+        <br />
+        <br />
+        <Social />
       </div>
     );
   }
