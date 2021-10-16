@@ -35,7 +35,6 @@ class StudentsTable extends Component {
       <Container>
         <Card className='studentsTableContainer'>
           <Card.Body>
-            <h2 className='subtopic'>{this.props.title}</h2>
             <Table stripped bordered hover size='sm' className='studentsTable'>
               <thead>
                 <tr>

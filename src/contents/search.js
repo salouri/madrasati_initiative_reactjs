@@ -38,9 +38,9 @@ class Search extends Component {
 
   render() {
     return (
-      <Container>
-        <div className='condiv'>
-          <h2>{'Search for a student:'}</h2>
+      <div className='condiv'>
+        <h2 className='subtopic'>{'Search for a student:'}</h2>
+        <Container>
           <Card style={{ width: '65%', display: 'inline-block' }}>
             <Card.Body style={{ width: '55%', display: 'inline-block' }}>
               <Form onSubmit={this.onFormSubmit.bind(this)} id='search-student-form'>
@@ -81,8 +81,8 @@ class Search extends Component {
           />
           <br /> <br />
           <Social />
-        </div>
-      </Container>
+        </Container>
+      </div>
     );
   }
 }

@@ -13,11 +13,10 @@ class List extends Component {
   render() {
     return (
       <div className='condiv'>
-        <StudentsTable
-          students={this.state.students}
-          title='List all registered students:'
-        />
-        <br /> <br />
+        <h2 className='subtopic'>{'List all registered students:'}</h2>
+        <StudentsTable students={this.state.students} />
+        <br />
+        <br />
         <Social />
       </div>
     );

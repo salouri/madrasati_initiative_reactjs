@@ -7,8 +7,7 @@ class Register extends Component {
   render() {
     return (
       <div className='condiv'>
-        <br />
-        <h2>{'Register a new student:'}</h2>
+        <h2 className='subtopic'>{'Register a new student:'}</h2>
         <StudentForm />
         <br /> <br />
         <Social />

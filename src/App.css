@@ -40,36 +40,27 @@ header {
 .condiv {
   padding: 10px;
   left: 0;
-  margin: 170px auto 20px;
+  margin: 70px auto 20px;
   background-color: #f4f5f9;
   position: absolute;
   display: inline-block;
   width: 100vw;
 }
 
-.form-group {
-  text-align: left;
-}
-#search-student-form .form-group {
-  display: flex;
-}
-.form-label {
-  padding: 16px;
-  white-space: nowrap;
-  margin-right: 10px;
+#basic-navbar-nav {
+  align-items: center;
 }
 
-nav {
-  padding: 30px 0px 30px 0px;
-  /* flex: var(--sidebar-flex); */
-  background: #f4f5f9;
-  position: absolute;
-  top: 0px;
-  width: 100%;
+.navbar {
+  /* display: inline-block; */
   top: 60px;
 }
+.navbar-nav {
+  margin: 15px auto 0px;
+  background: #f4f5f9;
+}
 
-nav ul {
+.navbar-nav .nav-link {
   font-size: var(--fontsize-nav);
   text-align: center;
   list-style-type: none;
@@ -77,19 +68,13 @@ nav ul {
   text-decoration: none;
   color: rgb(28, 37, 163) !important;
 }
-nav ul li {
-  margin: 40px;
-  display: inline;
+.nav-link {
+  margin: 0px 20px;
 }
 
-nav li > .active {
-  font-weight: 500;
-  background-color: rgb(0 0 0 / 7%);
-  padding: 12px;
-}
-.table {
-  display: table; /* Allow the centering to work */
-  margin: 0 auto;
+.nav-link.active {
+  font-weight: bold;
+  color: #4b55a1;
 }
 
 .social {
@@ -113,10 +98,18 @@ nav li > .active {
   margin: 10px 10px 30px 10px !important;
 }
 
-/* .register {
-  margin-bottom: 50px;
-  padding-bottom: 30px;
-} */
+.form-group {
+  text-align: left;
+}
+#search-student-form .form-group {
+  display: flex;
+}
+.form-label {
+  padding: 16px;
+  white-space: nowrap;
+  margin-right: 10px;
+}
+
 .submitSuccess {
   visibility: visibile;
   color: rgb(62, 133, 55);
@@ -126,8 +119,8 @@ nav li > .active {
 }
 
 .studentsTableContainer {
-  padding-top: 50px;
-  margin: 50px 30px;
+  padding-top: 5px;
+  margin: 20px 30px;
 }
 .studentsTable {
   margin: 10px auto;
