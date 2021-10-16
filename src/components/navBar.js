@@ -1,54 +1,33 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Navbar, Nav } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
-class Navbar extends Component {
+class Navigation extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      activeNavItem: 'Register',
-    };
+    this.state = {};
   }
-
-  activateItem = (id) => {
-    // remove 'active' class from all "Navitem" DOM elements
-    if (this.state.activeNavItem.length > 0) {
-      document
-        .querySelector(`#${this.state.activeNavItem}`)
-        .classList.remove('active');
-    }
-
-    // add 'active' class to the id stored in the 'activeNavItem' state above
-    this.setState({ activeNavItem: id }, () => {
-      document.querySelector(`#${this.state.activeNavItem}`).classList.add('active');
-    });
-  };
-
   render() {
     return (
-      <nav>
-        <div className='table'>
-          <ul id='horizontal-list'>
-            <li id='Register'>
-              <NavLink to='/' exact activeClassName='active'>
-                Register
-              </NavLink>
-            </li>
-            <li id='Search'>
-              <NavLink to='/search' activeClassName='active'>
-                Search
-              </NavLink>
-            </li>
-            <li id='List'>
-              <NavLink to='/list' activeClassName='active'>
-                List
-              </NavLink>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <Navbar expand='sm'>
+        {/* <div className='table'> */}
+        <Navbar.Toggle aria-controls='basic-navbar-nav' />
+        <Navbar.Collapse id='basic-navbar-nav'>
+          <Nav className='mr-auto'>
+            <LinkContainer to='/' exact>
+              <Nav.Link>Register</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to='/search'>
+              <Nav.Link>Search</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to='/list'>
+              <Nav.Link>List</Nav.Link>
+            </LinkContainer>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
     );
   }
 }
 
-export default Navbar;
+export default Navigation;
