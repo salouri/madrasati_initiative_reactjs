@@ -26,6 +26,8 @@ header {
   position: absolute;
   top: 0px;
   height: 60px;
+  font-size: 0.85vw;
+  white-space: nowrap;
 }
 
 .App {
@@ -172,4 +174,10 @@ p {
   font-weight: 300;
   margin: 20px 0;
   line-height: 1.3em;
+}
+
+.submitButton {
+  margin: 25px;
+  padding: 8px 14px;
+  font-size: 18px;
 }

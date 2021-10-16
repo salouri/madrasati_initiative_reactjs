@@ -35,7 +35,14 @@ class StudentsTable extends Component {
       <Container>
         <Card className='studentsTableContainer'>
           <Card.Body>
-            <Table stripped bordered hover size='sm' className='studentsTable'>
+            <Table
+              responsive='sm'
+              stripped='true'
+              bordered
+              hover
+              size='sm'
+              className='studentsTable'
+            >
               <thead>
                 <tr>
                   <th>{'First Name'}</th>

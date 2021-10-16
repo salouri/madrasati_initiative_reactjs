@@ -45,49 +45,45 @@ class Search extends Component {
           <Card.Body>
             <Container>
               <Form onSubmit={this.onFormSubmit.bind(this)} id='search-student-form'>
-                <Form.Group className='mb-3'>
-                  <Row>
-                    <Col>
-                      <Form.Label htmlFor='firstName'>
+                <Row>
+                  <Col>
+                    <Form.Group className='mb-3' controlId='formSearchFirst'>
+                      <Form.Label htmlFor='searchByFirst'>
                         <strong>First Name</strong>
                       </Form.Label>
-                    </Col>
-                    <Col>
+
                       <Form.Control
-                        id='firstName'
+                        id='searchByFirst'
                         type='text'
                         required={true}
                         value={this.state.fullName.first}
                         onChange={this.eventCurrentField.bind(this, 'first')}
                       />
-                    </Col>
-                  </Row>
-                </Form.Group>
-                <Form.Group className='mb-3'>
-                  <Row>
-                    <Col>
-                      <Form.Label htmlFor='lastName'>
+                    </Form.Group>
+                  </Col>
+                  <Col>
+                    <Form.Group className='mb-3' controlId='formSearchLast'>
+                      <Form.Label htmlFor='searchByLast'>
                         <strong>Last Name</strong>
                       </Form.Label>
-                    </Col>
-                    <Col>
+
                       <Form.Control
-                        id='lastName'
+                        id='searchByLast'
                         type='text'
                         required={true}
                         value={this.state.fullName.last}
                         onChange={this.eventCurrentField.bind(this, 'last')}
                       />
-                    </Col>
-                  </Row>
-                </Form.Group>
-                <Row>
-                  <Col>
-                    <Button type='submit' className='btn btn-primary btn-block mb-5'>
-                      Search
-                    </Button>
+                    </Form.Group>
                   </Col>
                 </Row>
+
+                <Button
+                  type='submit'
+                  className='btn btn-primary btn-block submitButton'
+                >
+                  Search
+                </Button>
               </Form>
             </Container>
           </Card.Body>

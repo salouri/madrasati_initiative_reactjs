@@ -360,7 +360,10 @@ export default class StudentForm extends Component {
                 </Col>
               </Row>
 
-              <Button type='submit' className='btn btn-primary btn-block'>
+              <Button
+                type='submit'
+                className='btn btn-primary btn-block submitButton'
+              >
                 Submit
               </Button>
             </Form>
