@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import Widecard from '../components/widecard';
 import Social from '../components/social';
 import StudentsTable from '../components/studentsTable';
 

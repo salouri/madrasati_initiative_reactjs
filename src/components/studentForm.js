@@ -253,15 +253,14 @@ export default class StudentForm extends Component {
 
   render() {
     return (
-      <Card style={{ width: '65%', display: 'inline-block' }}>
+      <Card style={{ width: '45%', display: 'inline-block' }}>
         <Card.Body>
           <Form onSubmit={this.onFormSubmit.bind(this)} id='register-student-form'>
-            <Form.Group className='mb-3'>
+            <Form.Group className='mb-3' controlId='formFname'>
               <Form.Label>
                 <strong>First Name</strong>
               </Form.Label>
               <Form.Control
-                id='firstName'
                 placeholder='First Name'
                 type='text'
                 required={true}
@@ -269,7 +268,7 @@ export default class StudentForm extends Component {
                 onChange={this.eventCurrentField.bind(this, 'firstName')}
               />
             </Form.Group>
-            <Form.Group className='mb-3'>
+            <Form.Group className='mb-3' controlId='formLname'>
               <Form.Label>
                 <strong>Last Name</strong>
               </Form.Label>
@@ -280,7 +279,7 @@ export default class StudentForm extends Component {
                 onChange={this.eventCurrentField.bind(this, 'lastName')}
               />
             </Form.Group>
-            <Form.Group className='mb-3'>
+            <Form.Group className='mb-3' controlId='formDOB'>
               <Form.Label>
                 <strong>Date of Birth</strong>
               </Form.Label>
@@ -292,7 +291,7 @@ export default class StudentForm extends Component {
                 onChange={this.eventCurrentField.bind(this, 'dob')}
               />
             </Form.Group>
-            <Form.Group className='mb-3'>
+            <Form.Group className='mb-3' controlId='formNation'>
               <Form.Label>
                 <strong>Nationality</strong>
               </Form.Label>
@@ -313,7 +312,7 @@ export default class StudentForm extends Component {
                 ))}
               </Form.Control>
             </Form.Group>
-            <Form.Group className='mb-3'>
+            <Form.Group className='mb-3' controlId='formPrevgpa'>
               <Form.Label>
                 <strong>Previous GPA</strong>
               </Form.Label>
@@ -326,7 +325,7 @@ export default class StudentForm extends Component {
                 onChange={this.eventCurrentField.bind(this, 'previousGPA')}
               />
             </Form.Group>
-            <Form.Group className='mb-3'>
+            <Form.Group className='mb-3' controlId='formCurrgpa'>
               <Form.Label>
                 <strong>Current GPA</strong>
               </Form.Label>

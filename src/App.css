@@ -35,14 +35,10 @@ body {
   width: 100%;
 }
 
-.card,
-.card-body {
-  width: '75%';
-  display: 'inline-block';
-}
-
 .form-group {
   text-align: left;
+}
+#search-student-form .form-group {
   display: flex;
 }
 .form-label {
@@ -127,14 +123,16 @@ nav li > .active {
 }
 
 .studentsTableContainer {
-  padding-top: 70px;
+  padding-top: 50px;
+  margin: 50px 30px;
 }
 .studentsTable {
+  margin: 10px auto;
   text-align: center;
   font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   border: 3px solid #ddd;
-  width: 100%;
+  width: 90%;
 }
 
 .studentsTable td,
