@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Social from '../components/social';
 import StudentsTable from '../components/studentsTable';
-import { Button, Form, Card, Container } from 'react-bootstrap';
+import { Button, Form, Card, Container, Row, Col } from 'react-bootstrap';
 
 class Search extends Component {
   constructor(props) {
@@ -40,46 +40,62 @@ class Search extends Component {
     return (
       <div className='condiv'>
         <h2 className='subtopic'>{'Search for a student:'}</h2>
-        <Container>
-          <Card style={{ width: '65%', display: 'inline-block' }}>
-            <Card.Body style={{ width: '55%', display: 'inline-block' }}>
+
+        <Card style={{ width: '65%', display: 'inline-block' }}>
+          <Card.Body style={{ width: '55%', display: 'inline-block' }}>
+            <Container>
               <Form onSubmit={this.onFormSubmit.bind(this)} id='search-student-form'>
                 <Form.Group className='mb-3'>
-                  <Form.Label htmlFor='firstName'>
-                    <strong>First Name</strong>
-                  </Form.Label>
-                  <Form.Control
-                    id='firstName'
-                    type='text'
-                    required={true}
-                    value={this.state.fullName.first}
-                    onChange={this.eventCurrentField.bind(this, 'first')}
-                  />
+                  <Row>
+                    <Col>
+                      <Form.Label htmlFor='firstName'>
+                        <strong>First Name</strong>
+                      </Form.Label>
+                    </Col>
+                    <Col>
+                      <Form.Control
+                        id='firstName'
+                        type='text'
+                        required={true}
+                        value={this.state.fullName.first}
+                        onChange={this.eventCurrentField.bind(this, 'first')}
+                      />
+                    </Col>
+                  </Row>
                 </Form.Group>
                 <Form.Group className='mb-3'>
-                  <Form.Label htmlFor='lastName'>
-                    <strong>Last Name</strong>
-                  </Form.Label>
-                  <Form.Control
-                    id='lastName'
-                    type='text'
-                    required={true}
-                    value={this.state.fullName.last}
-                    onChange={this.eventCurrentField.bind(this, 'last')}
-                  />
+                  <Row>
+                    <Col>
+                      <Form.Label htmlFor='lastName'>
+                        <strong>Last Name</strong>
+                      </Form.Label>
+                    </Col>
+                    <Col>
+                      <Form.Control
+                        id='lastName'
+                        type='text'
+                        required={true}
+                        value={this.state.fullName.last}
+                        onChange={this.eventCurrentField.bind(this, 'last')}
+                      />
+                    </Col>
+                  </Row>
                 </Form.Group>
-
-                <Button type='submit' className='btn btn-primary btn-block mb-5'>
-                  Search
-                </Button>
+                <Row>
+                  <Col>
+                    <Button type='submit' className='btn btn-primary btn-block mb-5'>
+                      Search
+                    </Button>
+                  </Col>
+                </Row>
               </Form>
-            </Card.Body>
-          </Card>
-          <StudentsTable
-            students={this.state.foundStudents}
-            title='Found Students (if any):'
-          />
-        </Container>
+            </Container>
+          </Card.Body>
+        </Card>
+        <StudentsTable
+          students={this.state.foundStudents}
+          title='Found Students (if any):'
+        />
         <br />
         <br />
         <Social />
