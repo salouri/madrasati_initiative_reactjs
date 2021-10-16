@@ -264,7 +264,6 @@ export default class StudentForm extends Component {
                       <strong>First Name</strong>
                     </Form.Label>
                     <Form.Control
-                      placeholder='First Name'
                       type='text'
                       required={true}
                       value={this.state.student.firstName}

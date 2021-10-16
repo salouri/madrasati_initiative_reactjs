@@ -129,6 +129,7 @@ header {
   border-collapse: collapse;
   border: 3px solid #ddd;
   width: 90%;
+  display: inline-box;
 }
 
 .studentsTable td,

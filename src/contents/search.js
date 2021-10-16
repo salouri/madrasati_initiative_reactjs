@@ -41,8 +41,8 @@ class Search extends Component {
       <div className='condiv'>
         <h2 className='subtopic'>{'Search for a student:'}</h2>
 
-        <Card style={{ width: '65%', display: 'inline-block' }}>
-          <Card.Body style={{ width: '55%', display: 'inline-block' }}>
+        <Card style={{ width: '45%', display: 'inline-block' }}>
+          <Card.Body>
             <Container>
               <Form onSubmit={this.onFormSubmit.bind(this)} id='search-student-form'>
                 <Form.Group className='mb-3'>
