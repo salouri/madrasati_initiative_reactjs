@@ -4,7 +4,11 @@ class Social extends Component {
   render() {
     return (
       <div className='social'>
-        <a href='https://www.facebook.com/Madrasatijo/' target='_blank'>
+        <a
+          href='https://www.facebook.com/Madrasatijo/'
+          target='_blank'
+          rel='noreferrer'
+        >
           <i className='fab fa-facebook'>
             <svg
               data-v-548e2928=''
@@ -29,6 +33,7 @@ class Social extends Component {
         <a
           href='https://www.youtube.com/channel/UC47TRS743FhVmuimhCos7kQ'
           target='_blank'
+          rel='noreferrer'
         >
           <i className='fab fa-youtube'>
             <svg
@@ -51,7 +56,11 @@ class Social extends Component {
             </svg>
           </i>
         </a>
-        <a href='https://www.instagram.com/madrasatijo/' target='_blank'>
+        <a
+          href='https://www.instagram.com/madrasatijo/'
+          target='_blank'
+          rel='noreferrer'
+        >
           <i className='fab fa-instagram'>
             <svg
               data-v-548e2928=''
@@ -91,7 +100,7 @@ class Social extends Component {
           </i>
         </a>
 
-        <a href='https://twitter.com/madrasatijo' target='_blank'>
+        <a href='https://twitter.com/madrasatijo' target='_blank' rel='noreferrer'>
           <i className='fab fa-twitter'>
             <svg
               data-v-548e2928=''
